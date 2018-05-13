@@ -1,4 +1,4 @@
 1. My proudest achievement is having had nearly no issues in the web systems during the official launch of the game I was working on and - more importantly - having fixed the few issues we had fast.
   I had taken over the responsibility for web site and backend services just a year before and there was nearly no docs, no monitoring.
   The launch had 3 times the expected amount of players and - at least in the web department - we had only minimal issues which we were able to detect and fix easily. Even changing the network to allow for DDOS mitigation was easily done due to my single-point of entry network design.
-2. https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/ You should read it because it shows that even seemingly simple things as addresses are much more complex than one thinks, especially when building for international audiences.
+2. https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/ You should read it because it shows how even seemingly simple things as addresses are much more complex than one thinks, especially when building for international audiences.
