@@ -1,9 +1,8 @@
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
@@ -79,6 +78,9 @@ public class ArraySorterTest extends AbstractTestNGSpringContextTests {
     assertEquals(sorter.sort(input), input);
   }
 
+  /**
+   * Necessary for Spring DI to work
+   */
   @Configuration
   public static class AppConfig {
 
