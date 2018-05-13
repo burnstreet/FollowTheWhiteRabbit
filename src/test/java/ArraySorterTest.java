@@ -1,15 +1,16 @@
 import static org.testng.Assert.*;
-import org.testng.annotations.BeforeTest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-public class ArraySorterTest {
+public class ArraySorterTest extends AbstractTestNGSpringContextTests {
 
+  @Autowired
   private ArraySorter sorter;
-
-  @BeforeTest
-  private void setUp() {
-    sorter = new ArraySorter();
-  }
 
   /**
    * unsorted array should be sorted
@@ -76,5 +77,14 @@ public class ArraySorterTest {
   private void sortPreSortedWithDuplicates() {
     int[] input = {-500, -500, 1, 4, 6, 7, 7, 7, 7, 7, 100, 14578, 123456789};
     assertEquals(sorter.sort(input), input);
+  }
+
+  @Configuration
+  public static class AppConfig {
+
+    @Bean
+    public static ArraySorter getSorter() {
+      return new ArraySorter();
+    }
   }
 }
