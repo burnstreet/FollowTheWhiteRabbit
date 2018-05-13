@@ -82,7 +82,7 @@ public class ArraySorterTest extends AbstractTestNGSpringContextTests {
    * Necessary for Spring DI to work
    */
   @Configuration
-  public static class AppConfig {
+  public static class Config {
 
     @Bean
     public static ArraySorter getSorter() {
