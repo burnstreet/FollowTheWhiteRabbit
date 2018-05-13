@@ -1,3 +1,5 @@
+package de.tschritter;
+
 import static org.testng.Assert.assertEquals;
 
 import org.springframework.beans.factory.annotation.Autowired;

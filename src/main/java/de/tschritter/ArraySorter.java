@@ -1,5 +1,6 @@
+package de.tschritter;
+
 import java.util.Arrays;
-import org.springframework.context.annotation.Bean;
 
 
 public class ArraySorter {
