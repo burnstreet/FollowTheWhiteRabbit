@@ -28,6 +28,20 @@ public class CharGrouperTest extends AbstractTestNGSpringContextTests {
   }
 
   @Test
+  public void groupDuplicates() {
+    String input = "aaaa";
+    String expected = "a4";
+    assertEquals(charGrouper.group(input), expected);
+  }
+
+  @Test
+  public void groupHello() {
+    String input = "hello";
+    String expected = "ehl2o";
+    assertEquals(charGrouper.group(input), expected);
+  }
+
+  @Test
   public void groupEmpty() {
     String input = "";
     assertEquals(charGrouper.group(input), input);
