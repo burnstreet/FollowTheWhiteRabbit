@@ -11,30 +11,24 @@ public class CharGrouper {
   @Autowired
   private StringCompressor compressor;
 
-  /*
-   * this satisfies the test in the task but will fail for multi-byte-characters.
-   */
   public String group(String input) {
     return compressor.compress(toString(sorter.sort(toIntArray(input))));
   }
 
-
   private int[] toIntArray(String input) {
-    byte[] bytes = input.getBytes();
-    int[] ints = new int[bytes.length];
-    for (int i = 0; i < bytes.length; i++) {
-      ints[i] = bytes[i];
+    int[] ints = new int[input.length()];
+    for (int i = 0; i < input.length(); i++) {
+      ints[i] = (int) input.charAt(i);
     }
     return ints;
   }
 
-
   private String toString(int[] input) {
+    StringBuilder sb = new StringBuilder(input.length);
 
-    byte[] bytes = new byte[input.length];
-    for (int i = 0; i < bytes.length; i++) {
-      bytes[i] = (byte) input[i];
+    for (int anInput : input) {
+      sb.append((char) anInput);
     }
-    return new String(bytes);
+    return sb.toString();
   }
 }
