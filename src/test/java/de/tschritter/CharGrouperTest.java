@@ -62,7 +62,7 @@ public class CharGrouperTest extends AbstractTestNGSpringContextTests {
 
     @Bean
     public static CharGrouper getCharGrouper() {
-      return new CharGrouper();
+      return new CharGrouper(getSorter(), getCompressor());
     }
 
     @Bean

@@ -6,10 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class CharGrouper {
 
+  private final ArraySorter sorter;
+  private final StringCompressor compressor;
+
   @Autowired
-  private ArraySorter sorter;
-  @Autowired
-  private StringCompressor compressor;
+  CharGrouper(ArraySorter sorter, StringCompressor compressor) {
+    this.sorter = sorter;
+    this.compressor = compressor;
+  }
 
   public String group(String input) {
     return compressor.compress(toString(sorter.sort(toIntArray(input))));
