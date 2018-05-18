@@ -20,18 +20,14 @@ public class CharGrouper {
   }
 
   private int[] toIntArray(String input) {
-    int[] ints = new int[input.length()];
-    for (int i = 0; i < input.length(); i++) {
-      ints[i] = (int) input.charAt(i);
-    }
-    return ints;
+    return input.codePoints().toArray();
   }
 
   private String toString(int[] input) {
     StringBuilder sb = new StringBuilder(input.length);
 
     for (int anInput : input) {
-      sb.append((char) anInput);
+      sb.appendCodePoint(anInput);
     }
     return sb.toString();
   }
